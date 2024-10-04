@@ -30,6 +30,7 @@
                 <th>STT</th>
                 <th>Name</th>
                 <th>Description</th>
+                <th>Total Product</th>
                 <th>Status</th>
                 <th>ACtion</th>
             </tr>
@@ -40,12 +41,13 @@
                     <td scope="row">${loop.count}</td>
                     <td>${category.categoryName}</td>
                     <td>${category.description}</td>
+                    <td>${category.products.size()}</td>
                     <td>${category.status ?
                      '<span class="badge badge-primary">Active</span>'
                      :'<span class="badge badge-danger">Inactive</span>'}</td>
                     <td>
-                        <a class="btn btn-primary">Edit</a>
-                        <a class="btn btn-danger">Delete</a>
+                        <a href="/category/edit/${category.categoryId}" class="btn btn-primary">Edit</a>
+                        <a href="/category/delete/${category.categoryId}" class="btn btn-danger">Delete</a>
                     </td>
                 </tr>
             </c:forEach>

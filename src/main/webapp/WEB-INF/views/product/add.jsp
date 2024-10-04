@@ -46,7 +46,7 @@
                         </label>
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary">Update</button>
+                <button type="submit" class="btn btn-primary">Add new</button>
             </f:form>
         </div>
     </div>
