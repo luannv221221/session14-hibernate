@@ -47,16 +47,48 @@ public class CategoryDAOImpl implements CategoryDAO {
 
     @Override
     public Category findById(int id) {
-        return null;
+        Session session = sessionFactory.openSession();
+        Category category = new Category();
+        try {
+            category = session.get(Category.class,id);
+        } catch (Exception exception){
+            exception.printStackTrace();
+        } finally {
+            session.close();
+        }
+        return category;
     }
 
     @Override
     public Boolean update(Category category) {
-        return null;
+        Session session = sessionFactory.openSession();
+        try {
+            session.beginTransaction();
+            session.update(category);
+            session.getTransaction().commit();
+            return true;
+        } catch (Exception exception){
+            exception.printStackTrace();
+            session.getTransaction().rollback();
+        } finally {
+            session.close();
+        }
+        return false;
     }
 
     @Override
     public void delete(int id) {
+        Session session = sessionFactory.openSession();
+        try {
+            session.beginTransaction();
+            session.delete(findById(id));
+            session.getTransaction().commit();
 
+        } catch (Exception exception){
+            exception.printStackTrace();
+            session.getTransaction().rollback();
+        } finally {
+            session.close();
+        }
     }
 }

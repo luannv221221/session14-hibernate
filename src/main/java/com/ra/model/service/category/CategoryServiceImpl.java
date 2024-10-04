@@ -17,21 +17,21 @@ public class CategoryServiceImpl implements CategoryService{
 
     @Override
     public Boolean create(Category category) {
-        return null;
+        return categoryDAO.create(category);
     }
 
     @Override
     public Category findById(int id) {
-        return null;
+        return categoryDAO.findById(id);
     }
 
     @Override
     public Boolean update(Category category) {
-        return null;
+        return categoryDAO.update(category);
     }
 
     @Override
     public void delete(int id) {
-
+        categoryDAO.delete(id);
     }
 }

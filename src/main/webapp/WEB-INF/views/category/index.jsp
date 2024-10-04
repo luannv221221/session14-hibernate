@@ -53,6 +53,7 @@
 
             </tbody>
         </table>
+        <a href="/category/add" class="btn btn-success">Thêm mới</a>
     </div>
 </div>
 <!-- Optional JavaScript -->
