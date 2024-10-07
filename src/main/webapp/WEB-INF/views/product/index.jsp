@@ -42,7 +42,7 @@
                     <td scope="row">${loop.count}</td>
                     <td>${product.productName}</td>
                     <td>${product.price}</td>
-                    <td><img src=""></td>
+                    <td><img src="uploads/${product.image}" width="150px"></td>
                     <td>${product.category.categoryName}</td>
                     <td>${product.status ?
                      '<span class="badge badge-primary">Active</span>'
